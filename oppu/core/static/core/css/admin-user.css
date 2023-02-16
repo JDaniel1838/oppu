@@ -1,0 +1,176 @@
+:root{
+    --while-color:#FFFFFF;
+    --primary-color:#4FA9F5;
+    --text-color:#1F3E72;
+    --gray-color:#1F3E72;
+    --dark-color:#000000;
+
+    --font-family:Poppins, sans-serif;
+    
+    /* FONT SIZE TITLES */
+    --h1-bold-poppins-48: 48px;
+    --h2-bold-poppins-28: 28px;
+    --h3-bold-poppins-24: 24px;
+    --h4-bold-poppins-20: 20px;
+
+    /* FONT SIZE BODY */
+    --b1-display-bold-poppins-16: 16px;
+    --b1-display-poppins-bold: 700;
+    --b1-display-medium-poppins-16: 16px;
+    --b1-display-poppins-medium: 500;
+
+    --b2-display-bold-poppins-14: 14px;
+    --b2-display-poppins-bold: 600;
+    --b2-display-medium-poppins-14: 14px;
+    --b2-display-poppins-medium: 400;
+
+    --b3-text-bold-poppins-12: 12px;
+    --b3-text-poppins-bold: 700;
+    --b3-text-semibold-poppins-12: 12px;
+    --b3-text-poppins-semibold: 500;
+    --b3-text-regular-poppins-12: 12px;
+    --b3-text-poppins-regular: 400;
+    
+    --b4-text-bold-poppins-10: 10px;
+    --b4-text-poppins-bold: 700;
+    --b4-text-semibold-poppins-10: 10px;
+    --b4-text-poppins-semibold: 500;
+    --b4-text-regular-poppins-10: 10px ;
+    --b4-text-poppins-regular: 400;
+
+    /* UTILITIES */
+    --box-sh: 0 0 6px 0 rgba(0,0,0,0.6);
+
+}
+
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #fff;
+    font-family: var(--font-family);
+}
+
+main{
+    width: 100%;
+    height: auto;
+}
+
+.container-home{
+    background-image: linear-gradient(to right, rgba(67, 67, 67, 0.6) 0%, rgba(0,0,0,0.6) 100%),url(../img/bg-home.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh !important;
+}
+
+/* .container-home {
+    height: 1px;
+} */
+
+.btn-while{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn-while:hover{
+    border: 1px solid transparent;
+    background-color: #fff;
+    color: #434343;
+    transform: scale(1.05);
+}
+
+
+/* LOGIN */
+.bg-screen-h-full{
+    height: 100vh;
+    background-color: var(--while-color);
+}
+
+.content-instructions .img-logo{
+    height: 48px;
+    width: auto;
+}
+
+.content-instructions .title-login{
+    font-size: var(--h1-bold-poppins-48);
+    color: var(--primary-color);
+}
+
+.content-instructions .description-login{
+    font-size: var(--b1-display-poppins-16) !important;
+    font-weight: var(--b1-display-poppins-bold) !important;
+    color: var(--text-color);
+}
+
+.content-instructions .img-login{
+    width: 80%;
+    margin: 0 10%;
+    height: auto;
+}
+
+.content-login{
+    background-color: var(--primary-color);
+}
+
+.my-form{
+    width: 400px;
+    height: 500px;
+    background-color: var(--while-color);
+    box-shadow: var(--box-sh);
+    border-radius: 10px;
+}
+
+.my-form .title-form{
+    font-size: var(--h3-bold-poppins-24);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.my-form .form-control{
+    background-color: var(--while-color);
+    color: var(--primary-color);
+}
+
+.my-form .form-control:not(:placeholder-shown) {
+    border-color: var(--primary-color);
+}
+
+.my-form .form-check-label{
+    color: var(--primary-color);
+    font-size: var(--b3-text-poppins-12);
+    font-weight: var(--b3-text-poppins-regular);
+}
+
+  
+.my-form button{
+    background-color: var(--primary-color);
+    border: 1px solid transparent;
+    color: var(--while-color);
+}
+
+.my-form button:hover{
+    border-color:var(--primary-color);
+    background-color: var(while-color);
+    color:var(--primary-color)
+}
+
+/* ------------------ */
+
+
+
+
+/* RESET VALUES BOOTSTRAP */
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+

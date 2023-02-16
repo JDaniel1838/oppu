@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<section class="container-fluid h-100 container-home">
+    <div class="w-100">
+        <h1 class="display-1 fw-bold text-center my-style-h1">SION</h1>
+        <p class="fs-5 fw-semibold text-center">SYSTEM WIRELESS</p>
+    </div>
+
+    <div class="container py-3 container-buttons d-flex justify-content-evenly  align-items-center">
+        <a href="#" class="btn btn-while">INICIO</a>
+        <a href="#" class="btn btn-while">PLANES</a>
+        <a href="{% url 'login' %}" class="btn btn-while">REGISTRAR PAGO</a>
+        <a href="#" class="btn btn-while">SERVICIOS</a>
+        <a href="#" class="btn btn-while">CONTACTO</a>
+    </div>
+</section>
+{% endblock %}

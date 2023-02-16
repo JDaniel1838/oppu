@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | Registrar Pago | SION </title>
+
+    {% load static %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'core/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link href="{% static 'core/css/admin-user.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!-- As a link -->
+    <nav class="navbar white-color">
+        <div class="container white-color">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'core/img/logo_sion.png' %}" alt="" class="img-logo">
+        </a>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %} {% endblock %}
+      </main>
+</body>
+</html>
