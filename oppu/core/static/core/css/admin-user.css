@@ -4,6 +4,8 @@
     --text-color:#1F3E72;
     --gray-color:#1F3E72;
     --dark-color:#000000;
+    --unpain-color:#D61355;
+    --pending-color:#F2D370;
 
     --font-family:Poppins, sans-serif;
     
@@ -165,7 +167,191 @@ main{
 
 /* ------------------ */
 
+/* BASE */
+nav{
+    border-bottom: 1px solid var(--primary-color);
+}
 
+.container img{
+    width: auto;
+    height: 32px;
+}
+
+.text-welcome{
+    font-size: var(--b2-display-poppins-bold);
+    font-weight: var(--b2-display-poppins-bold);
+    color: var(--dark-color);
+    margin: 0 1rem 0 0;
+}
+
+.text-close-session{
+    font-size: var(--b2-display-poppins-bold);
+    font-weight: var(--b2-display-poppins-bold);
+    color: var(--dark-color); 
+    transition: .3s; 
+    cursor: pointer;  
+    text-decoration: none;
+}
+
+.text-close-session:hover{
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* ------------------ */
+
+/* REGISTER */
+.content-btn{
+    width: 70%;
+    height: auto;
+    margin: .7rem auto;
+    padding: .7rem;
+}
+
+.content-btn a{
+    font-size: var(--b1-display-bold-poppins-16);
+    font-weight: var(--b1-display-poppins-bold);
+    padding: .7rem 5rem;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 10px;
+}
+
+.content-btn a:hover{
+    background-color: var(--white-color) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.content-btn a:active{
+    background-color: var(--white-color) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.content-btn a.active{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.title-register{
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-register{
+    margin-top: 2rem;
+    width: 70%;
+}
+
+.form-register label{
+    color: var(--text-color);
+}
+
+
+.form-register input[disabled] {
+    background-color: var(--while-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.form-register select {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.form-register .custom-file-input{
+    background-color: var(--while-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.form-register .custom-file-input:hover{
+    color: var(--primary-color);
+}
+  
+.form-register .custom-file-input::-webkit-file-upload-button {
+    background-color: var(--primary-color);
+    color: var(--while-color);
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+.form-register .custom-file-input::-webkit-file-upload-button:hover {
+    background-color: #434343 !important;
+    color: #fff !important;
+}
+  
+  
+
+.form-register button{
+    font-size: var(--b2-display-bold-poppins-14);
+    font-weight: var(--b2-display-poppins-bold);
+    padding: .7rem 5rem;
+    background-color: var(--primary-color);
+    color: var(--while-color);
+    margin-top: .5rem;
+}
+
+.form-register button:hover{
+    background-color: var(--primary-color);
+    color: var(--while-color);
+}
+
+.form-register button img{
+    width: 16px !important;
+    height: 16px !important;
+}
+
+
+/* ------------------ */
+
+
+/* HISTORY */
+.table{
+    margin-bottom: 0;
+}
+
+.table tbody{
+    font-weight: var(--b1-display-medium-poppins-16);
+}
+
+.table tbody tr{
+    background-color: rgba(56, 92, 216, 0.10);
+    color:var(--text-color);
+}
+
+.table tr:nth-child(even) {
+    background-color: var(--while-color);
+    color: var(--text-color);
+}  
+
+.table thead > tr > th{
+    background-color: var(--primary-color) !important;
+    color: var(--while-color) !important;
+}
+
+.table a.btn{
+    font-size: var(--b4-text-semibold-poppins-10);
+    background-color: rgba(56, 92, 216, 0.10);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.table tbody tr.unpain{
+    background-color: var(--unpain-color);
+}
+
+.table tbody tr.pending{
+    background-color: var(--pending-color);
+}
+
+.table tbody tr.pending  a.btn, .table tbody tr.unpain  a.btn {
+    background-color: var(--while-color);
+    color: var(--primary-color);
+}
 
 
 /* RESET VALUES BOOTSTRAP */

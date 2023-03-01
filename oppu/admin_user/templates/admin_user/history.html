@@ -1,0 +1,71 @@
+{% extends 'admin_user/base.html' %}
+{% load static %}
+{% block title %}Historial{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="content-btn d-flex align-items-center justify-content-evenly">
+            <a href="{% url 'register' %}" class="btn btn-primary">Registrar Pago</a>
+            <a href="{% url 'history' %}" class="btn btn-primary active">Historial de Pagos</a>
+        </div>
+
+        <h2 class="title-register">HISTORIAL DE PAGOS</h2>
+
+        <!-- table-striped table-hover -->
+        <div class="content-table table-responsive rounded shadow mt-5 bg-body rounded">
+            <table class="table table-borderless table-equal-column-width text-center">
+                <thead>
+                    <tr>
+                      <th scope="col my-th">Estado</th>
+                      <th scope="col my-th">Mes</th>
+                      <th scope="col my-th">Fecha</th>
+                      <th scope="col my-th">Ver pago</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr class="unpain">
+                        <th>Sin pagar</th>
+                        <td>Enero</td>
+                        <td>15/01/2023</td>
+                        <td><a href="{% url 'register' %}" class="btn btn-primary">Registrar pago</a></td>
+                    </tr>
+                    <tr class="pending">
+                        <th>Pendiente</th>
+                        <td>Diciembre</td>
+                        <td>18/12/2022</td>
+                        <td><a href="{% static 'core/pdf-example/comprobante-230732.pdf' %}" target="_blank" class="btn btn-primary">Ver pago</a></td>
+                    </tr>
+                    <tr class="pending">
+                        <th>Pendiente</th>
+                        <td>Noviembre</td>
+                        <td>14/11/2022</td>
+                        <td><a href="{% static 'core/pdf-example/comprobante-230732.pdf' %}" target="_blank" class="btn btn-primary">Ver pago</a></td>
+                    </tr>
+                    <tr>
+                        <th>Pagado</th>
+                        <td>Octubre</td>
+                        <td>13/10/2022</td>
+                        <td><a href="{% static 'core/pdf-example/comprobante-230732.pdf' %}" target="_blank" class="btn btn-primary">Ver pago</a></td>
+                    </tr>
+                    <tr>
+                        <th>Pagado</th>
+                        <td>Septiembre</td>
+                        <td>15/09/2022</td>
+                        <td><a href="{% static 'core/pdf-example/comprobante-230732.pdf' %}" target="_blank" class="btn btn-primary">Ver pago</a></td>
+                    </tr>
+                    <tr>
+                        <th>Pagado</th>
+                        <td>Agosto</td>
+                        <td>20/08/2022</td>
+                        <td><a href="{% static 'core/pdf-example/comprobante-230732.pdf' %}" target="_blank" class="btn btn-primary">Ver pago</a></td>
+                    </tr>
+                    <tr>
+                        <th>Pagado</th>
+                        <td>Julio</td>
+                        <td>15/07/2022</td>
+                        <td><a href="{% static 'core/pdf-example/comprobante-230732.pdf' %}" target="_blank" class="btn btn-primary">Ver pago</a></td>
+                    </tr>
+                </tbody>                
+            </table>
+        </div>
+    </div>
+{% endblock %}

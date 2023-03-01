@@ -12,7 +12,7 @@
     <link href="{% static 'core/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Fuentes -->
-    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'core/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,9 +24,14 @@
     <!-- As a link -->
     <nav class="navbar white-color">
         <div class="container white-color">
-        <a class="navbar-brand" href="#">
-            <img src="{% static 'core/img/logo_sion.png' %}" alt="" class="img-logo">
-        </a>
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'core/img/logo_sion.png' %}" alt="" class="img-logo">
+            </a>
+
+            <div class="d-flex justify-content-evenly align-items-center link">
+                <p class="text-welcome">Bienvenido Hernan</p>
+                <a class="text-close-session" href="{% url 'login' %}">Salir</a>
+            </div>
         </div>
     </nav>
 

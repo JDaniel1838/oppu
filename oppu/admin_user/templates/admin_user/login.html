@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %} | Registrar Pago | SION </title>
+    <title>Login | Registrar Pago | SION </title>
 
     {% load static %}
 
@@ -43,19 +43,14 @@
                 <form action="" method="POST" class="my-form d-flex flex-column justify-content-center algin-items-center px-5">
                         {% csrf_token %}
                         <label for="email-user" class="title-form text-center mb-4">INICIO DE SESIÓN</label>
-                        <!-- <input type="email" class="form-control mb-2" id="email-user" placeholder="Correo electronico..." aria-describedby="emailHelp">
-                        <input type="password" class="form-control mb-2" id="password-user" placeholder="Contraseña..." aria-describedby="passwordHelpBlock"> -->
+                        
                         {{ login.email }}
                         {{ login.password }}
                         <div class="mb-4 form-check">
                             <input type="checkbox" class="form-check-input" id="show-password">
                             <label class="form-check-label" for="show-password">Mostrar contraseña</label>
                         </div>
-                      <button type="submit" class="btn">INGRESAR</button>
-                      
-                      (<django.forms.fields.EmailField object at 0x0000023C1FFB1C10>,)
-                        
-                        
+                      <a href="{% url 'register' %}" type="submit" class="btn btn-primary">INGRESAR</a>
                 </form>
             </div>
         </section>
