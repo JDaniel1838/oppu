@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    #app core
     path('',include('core.urls')),
     path('payment_register/',include('admin_user.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),#app register
+    path('accounts/', include('registration.urls')),#app register
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
 ]

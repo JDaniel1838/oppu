@@ -1,0 +1,1 @@
+Implementar tema personalizado con el nombre: "primary" para django-yet

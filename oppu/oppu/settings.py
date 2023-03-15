@@ -28,17 +28,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'register'
+LOGOUT_REDIRECT_URL = 'login'
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'registration',#<== app registration(default)
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',#<== app core
     'admin_user',#<== app admin_user
+    'jet.dashboard',
+    'jet',
+    'django.contrib.admin',
+    'django.contrib.auth',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'oppu.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -102,17 +106,50 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# JET CONFIGURATION
+JET_DEFAULT_THEME = 'light-blue'
+
+JET_THEMES = [
+    {
+        'theme': 'default', # theme folder name
+        'color': '#47bac1', # color of the theme's button in user menu
+        'title': 'Default' # theme title
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+
+# {
+#  'theme':'primary',
+#  'color':'#4FA9F5',
+#  'title':'Primary'
+
+#Ya jala el tema pero no es lo que esperamos perssonaliza solo
+#el tema light-blue, crea una carpeta con el mismo nombre y sobreescribe los estilos.
+#},
+
+
+JET_SIDE_MENU_COMPACT = True
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-MX'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

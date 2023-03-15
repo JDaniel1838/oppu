@@ -29,8 +29,8 @@
             </a>
 
             <div class="d-flex justify-content-evenly align-items-center link">
-                <p class="text-welcome">Bienvenido Hernan</p>
-                <a class="text-close-session" href="{% url 'login' %}">Salir</a>
+                <p class="text-welcome">Bienvenido {{ request.user.first_name }}</p>
+                <a class="text-close-session" href="{% url 'logout' %}">Salir</a>
             </div>
         </div>
     </nav>

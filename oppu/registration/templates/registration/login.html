@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Registrar Pago | SION </title>
+
+    {% load static %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'core/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link href="{% static 'core/css/admin-user.css' %}" rel="stylesheet">
+
+    <style>
+    .errorlist{
+        color:red;
+    }
+    </style>
+</head>
+<body>
+
+  <main role="main">
+    <section class="container-fluid bg-screen-h-full d-flex">
+        <div class="h-100 col-4 content-instructions">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'core/img/logo_sion.png' %}" alt="" class="img-logo ms-4 mt-3">
+            </a>
+            <h2 class="title-login pt-5 ps-4 pe-1">REGISTRA <br> TUS PAGOS</h2>
+            <p class="description-login pt-4 ps-4 pe-2">Ingresa con el nombre de usuario y contraseña proporcionados por su admistrador.</p>
+            <img src="{% static 'core/img/img-login.png' %}" class="img-login"  alt="Registrar comprobante de pago">
+        </div>
+        <div class="h-100 col-8 content-login d-flex justify-content-center align-items-center">
+          {% if 'register' in request.GET %}
+          <p style="color:green;">
+            Usuario registrado correctamente, ya puedes identificarte.
+          </p>
+          {% endif %}
+          <form action="" method="post" class="my-form d-flex flex-column justify-content-center algin-items-center px-5">
+            {% csrf_token %}
+            <label for="id_username" class="title-form text-center mb-4">INICIO DE SESIÓN</label>
+            
+            {% if form.non_field_errors %}
+              <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+            {% endif %}
+            <p>
+              <input type="text" name="username" autofocus maxlength="254" required
+                id="id_username" class="form-control" placeholder="Nombre de usuario"/>
+            </p>
+            <p>
+              <input type="password" name="password" required
+                id="id_password" class="form-control" placeholder="Contraseña"/>
+            </p>
+
+            <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" id="show-password">
+                <label class="form-check-label" for="show-password">Mostrar contraseña</label>
+            </div>
+            <button type="submit" class="btn">INGRESAR</button>
+          </form>
+        </div>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const d = document,
+    checkbox = d.getElementById("show-password"),
+    inputPassword = d.getElementById("id_password");
+
+    checkbox.addEventListener("change",(e)=>{
+        if (checkbox.checked) {
+            inputPassword.type="text";
+        } else {
+            inputPassword.type="password";
+        }
+    });
+  </script>
+</body>
+</html>

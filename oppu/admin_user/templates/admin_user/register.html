@@ -13,27 +13,36 @@
         <form class="form-register">
             <div class="mb-3">
                 <label for="name-user" class="form-label">Nombre de usuario:</label>
-                <input id="name-user" class="form-control" type="text" value="Hernán DÍaz Castillo" aria-label="Disabled input " disabled>
+                <input id="name-user" class="form-control" type="text" value="{{request.user.first_name}} {{request.user.last_name}}" aria-label="Disabled input " disabled>
             </div>
 
             <div class="mb-3">
                 <label for="user-month-payment" class="form-label">Mes de pago:</label>
-                <select id="user-month-payment" class="form-select" aria-label="Default select example">
+                <select id="user-month-payment" class="form-select" aria-label="Default select example" required>
                     <option disabled selected>Seleccione mes de pago</option>
                     <option value="1">Enero</option>
                     <option value="2">Febrero</option>
                     <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
                 </select>
             </div>
 
             <div class="mb-3">
                 <label for="user-email" class="form-label">Correo electrónico:</label>
-                <input type="email" class="form-control" id="user-email" value="hdiaz1293@gmail.com" aria-describedby="userEmail Disabled" disabled>
+                <input type="email" class="form-control" id="user-email" value="{{request.user.email}}" aria-describedby="userEmail Disabled" disabled>
             </div>
 
             <div class="mb-3">
                 <label for="user-form-file" class="form-label">Pago escaneado (En formato PDF):</label>
-                <input class="form-control custom-file-input" id="user-form-file" type="file" accept="application/pdf" id="user-form-file">
+                <input class="form-control custom-file-input" id="user-form-file" type="file" accept="application/pdf" id="user-form-file" required>
             </div>
               
             <button type="submit" class="btn btn-primary">
