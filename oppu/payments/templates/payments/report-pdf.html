@@ -1,0 +1,45 @@
+{% extends "payments/base.html" %}
+{% block content %}
+<h2 class="text-center">{{title}}</h2>
+<br/>
+<p>Fecha de creación: <b>{{date}}</b></p>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col my-th"><p>ESTADO</p></th>
+            <th scope="col my-th"><p>MES</p></th>
+            <th scope="col my-th"><p>FECHA</p></th>
+            <th scope="col my-th"><p>CLIENTE</p></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for payment in payments %}
+            {% if payment.state.name == "PENDIENTE" %}
+                <tr class="pending">
+                    <td>{{ payment.state }}</td>
+                    <td>{{ payment.month }}</td>
+                    <td>{{ payment.updated }}</td>
+                    <td>{{ payment.name_client }}</td>
+                </tr>
+            
+            {% elif payment.state.name == "SIN PAGAR" %}
+                <tr class="unpain">
+                    <td>{{ payment.state }}</td>
+                    <td>{{ payment.month }}</td>
+                    <td>{{ payment.updated }}</td>
+                    <td>{{ payment.name_client }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>{{ payment.state }}</td>
+                    <td>{{ payment.month }}</td>
+                    <td>{{ payment.updated }}</td>
+                    <td>{{ payment.name_client }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

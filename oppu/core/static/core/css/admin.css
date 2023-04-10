@@ -1,0 +1,121 @@
+:root{
+    --while-color:#FFFFFF;
+    --primary-color:#4FA9F5;
+    --text-color:#1F3E72;
+    --gray-color:#1F3E72;
+    --dark-color:#000000;
+    --unpain-color:#D61355;
+    --pending-color:#F2D370;
+    --pain-color:#31E981;
+
+}
+
+/* HIDEN FIRST COLUMN */
+thead tr th:first-child{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
+table thead th{
+    background: var(--primary-color);
+    color: var(--while-color);
+    text-transform: uppercase;
+    transition: none;
+}
+
+table thead th.sortable:hover {
+    background: var(--primary-color);
+}
+
+table thead a {
+    color: var(--while-color) !important;
+}
+
+tr td:first-child {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+/* ESTILOS DE COLUMNA SELECCIONADA */
+#changelist table tbody tr.selected{
+    border-color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--while-color);
+}
+
+
+/* ESTILOS DE COLUMNA DE ESTADO */
+tbody tr a{
+    color: var(--while-color) !important;
+}
+
+tbody tr a:hover{
+    color:var(--text-color) !important;
+    text-decoration: underline !important;
+}
+
+
+/* ESTADO DE PAGO */
+tr{
+    background-color: var(--pain-color);
+    color: var(--gray-color);
+}
+
+tr.unpain{
+    background-color: var(--unpain-color);
+}
+
+tr.pending{
+    background-color: var(--pending-color);
+}
+
+
+/* LINK DE CAMBIO DE ESTADO DE PAGO */
+li.success a, a:visited, a:hover, a:focus{
+    color: var(--while-color);
+    text-decoration: underline;
+}
+
+
+.div-button{
+    margin-top: 1rem;   
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+/* BUTTON FOR PRINT PDF */
+.button-customate{
+    border-radius: 0.28571rem;
+    font-size: 0.85714rem;
+    font-weight: lighter;
+    text-align: center;
+    padding: 0 1.42857rem;
+    text-transform: uppercase;
+    background-color: #5EADDE;
+    color: #fff;
+    height: 2.28571rem;
+    outline: none;
+    border: 1px solid #5EADDE;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+}
+
+.button-customate:hover{
+    background-color: #1cacfc;
+    color: #fff;
+}
+
+.button-customate:focus{
+    background-color: #1cacfc;
+    color: #fff;
+}
+

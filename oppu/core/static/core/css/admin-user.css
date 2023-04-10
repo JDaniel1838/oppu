@@ -354,6 +354,98 @@ nav{
 }
 
 
+/* STYLES MODAL */
+
+.message-succeeded h6{
+    font-size: 14px !important;
+    font-weight: var(--b3-text-poppins-semibold)!important;
+    color: var(--text-color);
+}
+
+.message-succeeded h6 span{
+    font-size: 16px !important;
+    font-weight: var(--b1-display-poppins-bold) !important;
+}
+
+.message-succeeded img{
+    width: 4rem;
+    height: auto;
+    margin-bottom:1rem;
+}
+
+.btn-close-modal{
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: .3s;
+}
+
+.btn-close-modal:hover{
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* STYLES MODAL ERROR*/
+
+.message-error h6{
+    font-size: 14px !important;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.message-error img{
+    width: 4rem;
+    height: auto;
+    margin-bottom:1rem;
+}
+
+.btn-close-modal-error{
+    background-color: var(--unpain-color);
+    border: 1px solid var(--unpain-color);
+    transition: .3s;
+}
+
+.btn-close-modal-error:hover{
+    background-color: var(--unpain-color);
+    border: 1px solid var(--unpain-color);
+    transform: scale(1.05);
+}
+
+/* STYLES MODAL SOME ERROR */
+.btn-close-modal-s-error{
+    background-color: var(--pending-color);
+    border: 1px solid var(--pending-color);
+    color:var(--while-color) !important;
+    transition: .3s;
+}
+
+.btn-close-modal-s-error:hover{
+    background-color: var(--pending-color);
+    border: 1px solid var(--pending-color);
+    color:var(--while-color) !important;
+    transform: scale(1.05);
+}
+
+/* NO PAYMENTS */
+.no-payments{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.no-payments h5{
+    color: var(--text-color);
+}
+
+.no-payments img{
+    width: 4rem;
+    height: auto;
+    margin: 1.2rem auto;
+}
+
+
 /* RESET VALUES BOOTSTRAP */
 .container-fluid{
     padding-left: 0;

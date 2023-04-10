@@ -63,7 +63,7 @@ ROOT_URLCONF = 'oppu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'core','admin_user')],
+        'DIRS': [os.path.join(BASE_DIR, 'core','admin_user','payments' )],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +130,9 @@ JET_THEMES = [
     }
 ]
 
+#BOTTON TO CHANGE PAGES
+JET_CHANGE_FORM_SIBLING_LINKS = True
+
 # {
 #  'theme':'primary',
 #  'color':'#4FA9F5',
@@ -139,9 +142,7 @@ JET_THEMES = [
 #el tema light-blue, crea una carpeta con el mismo nombre y sobreescribe los estilos.
 #},
 
-
 JET_SIDE_MENU_COMPACT = True
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -161,6 +162,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -170,3 +172,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #MEDIA IN DEVELOPMENT
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+

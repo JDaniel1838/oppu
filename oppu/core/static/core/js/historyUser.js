@@ -1,26 +1,47 @@
 const d = document,
-NodelistRecords = document.querySelectorAll(".data-payment");
+  NodelistRecords = document.querySelectorAll(".data-payment");
 
-const loadDataInTable = ()=>{
-    const listRecord = Array.from(NodelistRecords);
-     
-    listRecord.map(el=>{
-        console.log(el.textContent.trim());
-        if (el.textContent.trim() === "SIN PAGAR") {
-            const dataUrlUnpain = el.dataset.urlUnpain;
-            el.parentNode.classList.add("unpain");
-            el.parentNode.lastChild.innerHTML = `<a href="${dataUrlUnpain}" class="btn btn-primary" >Registrar pago</a>`;
-
-        }else if(el.textContent.trim() === "PENDIENTE"){
-            const dataUrlPending = el.dataset.urlPending;
-            console.log(el.dataset);
-            el.parentNode.classList.add("pending");         
-            el.parentNode.lastChild.innerHTML = `<a href="${dataUrlPending}" target="_blank" class="btn btn-primary">Ver pago</a>`;
-        }else{
-            const dataUrl = el.dataset.url;
-            el.parentNode.lastChild.innerHTML = `<a href="${dataUrl}" target="_blank" class="btn btn-primary">Ver pago</a>`;
-        }
-    });
+const loadDataInTable = () => {
+  const listRecord = Array.from(NodelistRecords);
+  listRecord.map((el) => {
+    //console.log(el.textContent.trim());
+    console.log(el.parentNode.lastChild);
+    if (el.textContent.trim() === "SIN PAGAR") {
+      const dataUrlUnpain = el.dataset.urlUnpain;
+      el.parentNode.classList.add("unpain");
+      const link = document.createElement("a");
+      link.href = dataUrlUnpain;
+      link.classList.add("btn", "btn-primary");
+      link.textContent = "Registrar pago";
+      const td = document.createElement("td");
+      td.appendChild(link);
+      el.parentNode.appendChild(td);
+    } else if (el.textContent.trim() === "PENDIENTE") {
+      const dataUrlPending = el.dataset.urlPending;
+      el.parentNode.classList.add("pending");
+      const link = document.createElement("a");
+      link.href = dataUrlPending;
+      link.target = "_blank";
+      link.classList.add("btn", "btn-primary");
+      link.textContent = "Ver pago";
+      const td = document.createElement("td");
+      td.appendChild(link);
+      el.parentNode.appendChild(td);
+    } else {
+      const dataUrl = el.dataset.url;
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      link.target = "_blank";
+      link.classList.add("btn", "btn-primary");
+      link.textContent = "Ver pago";
+      const td = document.createElement("td");
+      td.appendChild(link);
+      el.parentNode.appendChild(td);
+    }
+  });
 };
+
+
+
 
 loadDataInTable();

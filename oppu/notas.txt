@@ -1,1 +1,5 @@
 Implementar tema personalizado con el nombre: "primary" para django-yet
+actualizar librerias:
+ pip freeze > requirements.txt
+instalar librerias:
+ pip install -r requirements
