@@ -452,3 +452,91 @@ nav{
     padding-right: 0;
 }
 
+/* RESPONSIVE */
+
+@media screen and (max-width: 998px) {
+    
+    .content-btn a{
+        padding: 0.7rem 4rem;
+        margin: 4px;
+    }
+
+    .form-register button{
+        margin-bottom: 64px;
+    }
+    
+}
+
+
+ @media screen and (max-width: 768px){
+    
+    .content-btn a{
+        padding: 0.7rem 2rem;
+    }
+
+    .container-fluid{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .h-100{
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .content-login{
+        width: 100% !important;
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+
+    .content-instructions .title-login{
+    font-size: 50px;
+    }
+
+    .content-instructions .img-login{
+        width: 40%;
+    }
+
+
+}
+
+@media screen and (max-width: 468px) {
+    
+    .content-btn{
+        flex-direction: column;
+    }
+    
+    .content-btn a{
+        padding: 0.9rem 0rem;
+    }
+
+    .content-instructions .title-login{
+        font-size: 32px;
+    }
+
+    .my-form{
+        width: 316px;
+
+    }
+
+    .px-5{
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .form-register{
+        margin-top: 0rem;
+        width: 90%;
+    }
+
+    .form-register button{
+        padding: 0.7rem 1rem;
+    }
+
+}
+
+
+
