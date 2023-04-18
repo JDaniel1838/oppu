@@ -36,9 +36,6 @@ class PaymentAdmin(admin.ModelAdmin):
         js = ('core/js/main.js',)
         css = {'all': ('core/css/admin.css',)}
 
-
 admin.site.register(Month, MonthAdmin)
 admin.site.register(State, StateAdmin)
 admin.site.register(Payment, PaymentAdmin)
-
-

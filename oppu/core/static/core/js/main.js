@@ -1,6 +1,5 @@
 const d = document;
 const $btn = d.createElement("a");//Button Global
-console.log("Padrino");
 
 const getURLForBtn = ()=>{
     const urlParams = new URLSearchParams(window.location.search);
@@ -14,6 +13,7 @@ const getURLForBtn = ()=>{
     };
 
     console.log(paramsObj);
+    console.log(urlParams);
 
     
 
@@ -29,8 +29,10 @@ const getURLForBtn = ()=>{
     $btn.target = "_blank"; 
     $btn.href= url;
 
-    if (hasParams && !paramsObj.hasOwnProperty("p") && (!paramsObj.hasOwnProperty("q") || paramsObj.q === "")) {
+    if (hasParams && (!paramsObj.hasOwnProperty("p") || (!paramsObj.hasOwnProperty("q") || paramsObj.q === ""))) {
         createButton();
+    }else{
+        return false;
     }
     
 };

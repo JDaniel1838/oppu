@@ -4,9 +4,15 @@ from django.views import View
 from weasyprint import HTML
 from django.conf import settings
 import datetime
+from django.shortcuts import redirect
 from .models import Payment, Month, State
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
+from django.views.generic.base import TemplateView
+
+@method_decorator(staff_member_required, name='dispatch')
+class ErrorWithPDF(TemplateView):
+    template_name = "payments/error.html"
 
 @method_decorator(staff_member_required, name='dispatch')
 class ExportPDFView(View):
@@ -14,6 +20,10 @@ class ExportPDFView(View):
     def get(self, request):
         month_id_exact = request.GET.get('month__id__exact')
         state__id__exact = request.GET.get('state__id__exact')
+
+        if not (month_id_exact or state__id__exact):
+            # Redireccionar a otra vista si los dos parámetros no están presentes
+            return redirect('error') # Reemplaza 'nombre_de_la_vista' con el nombre de la vista a la que deseas redireccionar
         
         if month_id_exact and state__id__exact:
             state = State.objects.get(id=state__id__exact)
@@ -55,3 +65,4 @@ class ExportPDFView(View):
         HTML(string=html).write_pdf(response,)
 
         return response
+
