@@ -8,7 +8,6 @@ from .forms import PaymentForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 
-
 MONTHS = {
     "1": "ENERO",
     "2": "FEBRERO",
@@ -23,8 +22,10 @@ MONTHS = {
     "11": "NOVIEMBRE",
     "12": "DICIEMBRE"
 }
+
 ERROR_MONTH_REPEAT = False
 ERROR_OTHER = False
+
 
 
 @method_decorator(login_required, name='dispatch')
@@ -67,7 +68,7 @@ class RegisterPageView(FormView):
             state=state,
         )
         payment.save()
-        print("Todo correcto pa...")
+        print("Todo correcto ...")
         return super().form_valid(form)
 
     
@@ -105,10 +106,14 @@ class RegisterPageView(FormView):
         return render(self.request, self.template_name, context)
     
 
+
+
+
+
 @method_decorator(login_required, name='dispatch')
 class HistoryPageView(TemplateView):
     template_name = "admin_user/history.html"
-    
+
     def get_queryset(self):
         queryset = Payment.objects.filter(name_client=self.request.user)
         queryset = queryset.order_by('-month') # ordena por fecha de creación descendente: -month = de forma ascendente 

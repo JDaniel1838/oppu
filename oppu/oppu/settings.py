@@ -34,6 +34,7 @@ LOGOUT_REDIRECT_URL = 'login'
 
 INSTALLED_APPS = [
     'registration',#<== app registration(default)
+    'media',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
