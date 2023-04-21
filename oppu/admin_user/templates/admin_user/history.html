@@ -47,8 +47,8 @@
                         {% for payment in payments %}
                             <tr>
                                 <th 
-                                    data-url="{{payment.receipt.url}}" 
-                                    data-url-pending="{{payment.receipt.url}}"
+                                    data-url="{{payment.receipt}}" 
+                                    data-url-pending="{{payment.receipt}}"
                                     data-url-unpain="{% url 'register' %}"
                                     class="data-payment"
                                 >{{ payment.state }}</th>

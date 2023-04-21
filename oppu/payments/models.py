@@ -31,9 +31,9 @@ class State(models.Model):
 class Payment(models.Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de pago")
     updated = models.DateTimeField(auto_now=True, verbose_name="Ultima modificación")
-    receipt = models.FileField(upload_to="comprobantes", null=True, blank=False, verbose_name="Comprobante")
+    receipt = models.FileField(upload_to="comprobantes", null=True, blank=True, verbose_name="Comprobante")
     name_client = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Nombre del cliente")
-    email_client = models.EmailField(max_length=254,verbose_name="Correo electrónico del cliente")
+    email_client = models.EmailField(max_length=254,verbose_name="Correo electrónico del cliente", null=True, blank=True)
     state = models.ForeignKey(State, on_delete=models.CASCADE, verbose_name="Estado")
     month = models.ForeignKey(Month, on_delete=models.CASCADE, verbose_name="Mes de pago")
 
