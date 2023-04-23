@@ -151,5 +151,16 @@ class HistoryPageView(TemplateView):
         payment_dict = model_to_dict(payment)
         payment_dict['receipt'] = str(payment_dict['receipt'])  # Convert FieldFile to string
         return payment_dict"""
-
     
+
+#Redireccionar al usuario dependiendo de sus permisos
+"""
+class AdminLoginRedirectView(View):
+    def get(self, request):
+        if request.user.is_superuser:
+            # Redirigir a la URL deseada para los usuarios administradores
+            return redirect('admin/payments/payment/')
+        else:
+            # Redirigir a la URL predeterminada para los otros usuarios
+            return redirect('register')
+"""

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,7 +35,6 @@ LOGOUT_REDIRECT_URL = 'login'
 
 INSTALLED_APPS = [
     'registration',#<== app registration(default)
-    'media',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -134,10 +134,37 @@ JET_THEMES = [
 #BOTTON TO CHANGE PAGES
 JET_CHANGE_FORM_SIBLING_LINKS = True
 
+#JET_APP_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultAppLabelDashboard' 
+#Para personalizar el panel de cada aplicacion, se puede personalizar por cada app que se tenga localhost:8000/admin/payments
+
+JET_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard' 
+#JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
+# #Para personalizar el panel general localhost:8000/admin
+
 # {
 #  'theme':'primary',
 #  'color':'#4FA9F5',
 #  'title':'Primary'
+
+#Ocultar cosas al admin
+
+JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
+    {'label': _('General'), 'app_label': 'payments', 'items': [
+        {'name': 'payments.Payment', 'label':_('Todos los Pagos'), 'url': '/admin/payments/payment/'},
+        {'name': 'payments.Payment', 'label':_('Registrar nuevo pago'), 'url': '/admin/payments/payment/add'},
+        {'name': 'auth.user', 'label':_('Todos los usuarios')},
+        {'label': _('Agregar usuario'), 'url': '/admin/auth/user/add/'},
+        
+    ]},
+    {'label': _('Otras configuraciones'), 'items': [
+        {'name': 'payments.Month', 'label':_('Meses'), 'url': '/admin/payments/month/'},
+        {'name': 'payments.State', 'label':_('Estados'), 'url': '/admin/payments/state/'},
+    ]},
+] 
+
+
+
+
 
 #Ya jala el tema pero no es lo que esperamos perssonaliza solo
 #el tema light-blue, crea una carpeta con el mismo nombre y sobreescribe los estilos.
