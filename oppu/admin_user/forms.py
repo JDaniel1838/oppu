@@ -13,7 +13,8 @@ class LoginUser(forms.Form):
 #        fields = '__all__'
 
 class PaymentForm(forms.Form):
+    pass
     #MONTH_CHOICES = (('', 'Seleccione mes de pago'),)
     #month = forms.ChoiceField(choices=MONTH_CHOICES, widget=forms.Select(attrs={'class': 'form-select', 'required': True, 'id':'user-month-payment'}))
     
-    receipt = forms.FileField(widget=forms.ClearableFileInput(attrs={'class': 'form-control custom-file-input', 'id': 'user-form-file', 'required': True}))
+    #receipt = forms.FileField(widget=forms.ClearableFileInput(attrs={'class': 'form-control custom-file-input', 'id': 'user-form-file'}))
