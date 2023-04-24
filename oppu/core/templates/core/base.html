@@ -12,30 +12,148 @@
 
     {% load static %}
 
-    <!-- Bootstrap -->
-    <link href="{% static 'core/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Fuentes -->
-    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Estilos -->
-    <link href="{% static 'core/css/admin-user.css' %}" rel="stylesheet">
+    <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'core/images/fevicon.png' %}" type="image/gif" />
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
   </head>
 
-  <body>
+  <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'core/images/loading.gif' %}" alt="#"/></div>
+      </div>
+      <!-- end loader -->
 
-    <main>
-      {% block content %} {% endblock %}
-    </main>
+    
 
-    <!-- Bootstrap -->
-    <script src="{% static 'core/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'core/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <!-- header -->
+      <div class="header">
+         <div class="container">
+            <div class="row d_flex">
+               <div class=" col-md-2 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo">
+                           <a href="index.html"><img src="{% static 'core/images/logo.png' %}" alt="#" /></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-8 col-sm-12">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'planes' %}">Planes</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'contact' %}">Contactanos</a>
+                           </li>
+                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'login' %}">Registrar Pagos</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end header inner -->
 
-  </body>
+      {% block content %}
+
+      
+
+      {% endblock %}
+
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="infoma text_align_left">
+                        <h3>Choose.</h3>
+                        <ul class="commodo">
+                           <li>Commodo</li>
+                           <li>consequat. Duis a</li>
+                           <li>ute irure dolor</li>
+                           <li>in reprehenderit </li>
+                           <li>in voluptate </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                     <div class="infoma">
+                        <h3>Get Support.</h3>
+                        <ul class="conta">
+                           <li><i class="fa fa-map-marker" aria-hidden="true"></i>Address : Loram Ipusm 
+                           </li>
+                           <li><i class="fa fa-phone" aria-hidden="true"></i>Call : +01 1234567890</li>
+                           <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="Javascript:void(0)"> Email : demo@gmail.com</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="infoma">
+                        <h3>Company.</h3>
+                        <ul class="menu_footer">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about.html">About </a></li>
+                           <li><a href="domain.html">Domain</a></li>
+                           <li><a href="hosting.html">Hosting</a></li>
+                           <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-6 col-sm-6">
+                     <div class="infoma text_align_left">
+                        <h3>Services.</h3>
+                        <ul class="commodo">
+                           <li>Commodo</li>
+                           <li>consequat. Duis a</li>
+                           <li>ute irure dolor</li>
+                           <li>in reprehenderit </li>
+                           <li>in voluptate </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2020 All Rights Reserved. <a href="https://html.design/"> Free html Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{% static 'core/js/jquery.min.js' %}"></script>
+      <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+      <!-- sidebar -->
+      <script src="{% static 'core/js/custom.js' %}"></script>
+   </body>
 
 </html>
