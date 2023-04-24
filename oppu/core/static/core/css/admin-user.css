@@ -72,9 +72,126 @@ main{
     height: 100vh !important;
 }
 
-/* .container-home {
-    height: 1px;
-} */
+/* loader*/
+  
+
+/* HOME SION SYSTEM-------------------------- */
+
+.container_layout{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_bar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 20%;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_bar img{
+    width: 100px;
+}
+
+.nav_links a{
+    text-decoration: none;
+    color: var(--dark-color);
+    padding: 0 8px;
+    font-family: var(--h1-bold-poppins-48);
+}
+
+
+
+.home_layout{
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.home_layout img{
+    width: 310px;
+
+}
+
+.text_layout h1{
+    margin-top: 25%;
+    font-family: var(--h1-bold-poppins-48);
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.text_layout p{
+    width: 400px;
+    text-align: justify;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons .btn{
+    font-family: var(--b1-display-bold-poppins-16);
+    justify-content: center;
+    width: 170px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: var(--while-color) 2px solid;
+    border-radius: 8px;
+    color: var(--while-color);
+}
+
+.buttons .btn:hover{
+    background-color: var(--while-color);
+    transition: all .3s;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+.second_layout{
+    width: 100%;
+    background-color: var(--while-color);
+    height: 700px;
+}
+
+.custom-shape-divider-top-1682297910 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1682297910 svg {
+    position: relative;
+    display: block;
+    width: calc(215% + 1.3px);
+    height: 356px;
+}
+
+.custom-shape-divider-top-1682297910 .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* END HOME SION SYSTEM-------------------------- */
 
 .btn-while{
     background-color: transparent;
