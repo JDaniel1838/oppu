@@ -1,4 +1,45 @@
-
+:root{
+     --while-color:#FFFFFF;
+     --primary-color:#4FA9F5;
+     --text-color:#1F3E72;
+     --gray-color:#1F3E72;
+     --dark-color:#000000;
+     --unpain-color:#D61355;
+     --pending-color:#F2D370;
+ 
+     --font-family:Poppins, sans-serif;
+     
+     /* FONT SIZE TITLES */
+     --h1-bold-poppins-48: 48px;
+     --h2-bold-poppins-28: 28px;
+     --h3-bold-poppins-24: 24px;
+     --h4-bold-poppins-20: 20px;
+ 
+     /* FONT SIZE BODY */
+     --b1-display-bold-poppins-16: 16px;
+     --b1-display-poppins-bold: 700;
+     --b1-display-medium-poppins-16: 16px;
+     --b1-display-poppins-medium: 500;
+ 
+     --b2-display-bold-poppins-14: 14px;
+     --b2-display-poppins-bold: 600;
+     --b2-display-medium-poppins-14: 14px;
+     --b2-display-poppins-medium: 400;
+ 
+     --b3-text-bold-poppins-12: 12px;
+     --b3-text-poppins-bold: 700;
+     --b3-text-semibold-poppins-12: 12px;
+     --b3-text-poppins-semibold: 500;
+     --b3-text-regular-poppins-12: 12px;
+     --b3-text-poppins-regular: 400;
+     
+     --b4-text-bold-poppins-10: 10px;
+     --b4-text-poppins-bold: 700;
+     --b4-text-semibold-poppins-10: 10px;
+     --b4-text-poppins-semibold: 500;
+     --b4-text-regular-poppins-10: 10px ;
+     --b4-text-poppins-regular: 400;
+}
 
 /*--------------------------------------------------------------------- 
 File Name: style.css 
@@ -45,14 +86,41 @@ html {
 }
 
 body {
+     font-family: var(--h1-bold-poppins-48);
      color: #666666;
      font-size: 14px;
-     font-family: 'Roboto', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
 }
 
+/* Top Shape---------------------*/
+
+.custom-shape-divider-top-1682378242 {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     overflow: hidden;
+     line-height: 0;
+ }
+ 
+ .custom-shape-divider-top-1682378242 svg {
+     position: relative;
+     display: block;
+     width: calc(163% + 1.3px);
+     height: 363px;
+ }
+ 
+ .custom-shape-divider-top-1682378242 .shape-fill {
+     fill: #FFFFFF;
+ }
+
+/*----------------------------*/
+
+
+
 a {
+     font-family: var(--h1-bold-poppins-48);
      color: #1f1f1f;
      text-decoration: none !important;
      outline: none !important;
@@ -227,7 +295,7 @@ button {
 
 .read_more {
      font-size: 17px;
-     background-color: #43eee4;
+     background-color: var(--while-color);
      color: #fff;
      width: 100%;
      max-width: 164px;
@@ -235,7 +303,7 @@ button {
      display: inline-block;
      transition: ease-in all 0.5s;
      font-weight: 500;
-     border-radius: 50px;
+     border-radius: 4PX;
      height: 50px;
      line-height: 50px;
      text-transform: uppercase;
@@ -285,14 +353,26 @@ button {
 }
 
 .loader img {
-     width: 280px;
+     width: 200px;
+     animation: animation .6s linear infinite;
 }
+
+@keyframes animation{
+     100%{
+          scale: 1;
+     }
+     70%{
+          scale: 1.1;
+          opacity: 40%;
+     }
+}
+
+
 
 
 /*-- header --*/
 
 .header {
-     background: #2e3192;
      width: 100%;
      z-index: 999;
      height: 102px;
@@ -305,9 +385,16 @@ button {
      padding: 0;
 }
 
+.logo img{
+     width: 100%;
+}
+
+
+
 .navigation.navbar-dark .navbar-nav .nav-link {
      padding: 0px 25px;
-     color: #fff;
+     color: var(--dark-color);
+     font-family: var(--h1-bold-poppins-48);
      font-size: 17px;
      line-height: 20px;
      font-weight: 400;
@@ -316,7 +403,10 @@ button {
 
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
-     color: #43eee4;
+     color: var(--primary-color);
+     transition: all .2s;
+     transform: scale(1.1);
+     font-weight: bold;
 }
 
 .navigation.navbar-dark .navbar-nav .active>.nav-link,
@@ -377,7 +467,6 @@ ul.email li a i span {
      background-position: center;
      background-repeat: no-repeat;
      height: 100vh;
-     padding-bottom: 100px;
 }
 
 .slider_main {
@@ -400,13 +489,14 @@ ul.email li a i span {
 
 .dream .read_more {
      border: none;
-     background: #d5d6fd;
+     background: transparent;
      color: #fff;
+     border: solid var(--while-color) 1px;
 }
 
 .dream .read_more:hover {
-     background: #43eee4;
-     color: #fff;
+     background: var(--while-color);
+     color: var(--dark-color);
 }
 
 .dream .read_more:focus {
@@ -423,9 +513,6 @@ ul.email li a i span {
      text-transform: uppercase;
 }
 
-.dream_img figure {
-     margin: 0;
-}
 
 #banner1 .carousel-indicators {
      display: none;
@@ -440,7 +527,7 @@ ul.email li a i span {
      font-size: 15px;
      opacity: 1;
      border-radius: 50px;
-     top: 100%;
+     top: 70%;
 }
 
 #banner1 .carousel-control-next {
@@ -465,37 +552,6 @@ ul.email li a i span {
 .domain {
      background: #fefefd;
      padding-top: 90px;
-}
-
-.searchbar {
-     height: 70px;
-     background-color: #fcfcfd;
-     border-radius: 50px;
-     padding: 10px 30px;
-     display: flex;
-     box-shadow: 0 0 59px rgba(30, 30, 29, 0.09);
-}
-
-.search_input {
-     color: #afb4cc;
-     border: 0;
-     outline: 0;
-     background: #fcfcfd;
-     width: 100%;
-     line-height: 40px;
-     font-size: 17px;
-}
-
-.search_icon {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     color: #2e428b;
-     font-size: 20px;
-}
-
-.search_icon:hover {
-     color: #2e428b;
 }
 
 .domain_bg {
@@ -620,7 +676,7 @@ ul.email li a i span {
 
 .order {
      background: #fefefd;
-     padding-top: 60px;
+     padding-top: 100px;
 }
 
 .order .titlepage p {
@@ -640,6 +696,7 @@ ul.email li a i span {
      padding: 40px 10px;
      cursor: pointer;
 }
+
 
 .order-box h3 {
      color: #2e3192;
@@ -695,13 +752,24 @@ ul.supp li {
 }
 
 #ho_co:hover .order-box h3 {
-     color: #43eee4;
+     color: var(--while-color);
+     transition: ease-in all 0.5s;
+}
+
+#ho_co:hover .order-box p{
+     color: var(--while-color);
+     transition: ease-in all 0.5s;
+}
+
+#ho_co:hover .order-box li{
+     color: var(--while-color);
      transition: ease-in all 0.5s;
 }
 
 #ho_co:hover .order-box {
-     border: #2e3192 solid 3px;
+     border: var(--gray-color) solid 3px;
      transition: ease-in all 0.5s;
+     background-color: var(--primary-color);
 }
 
 #ho_co:hover .read_more {
@@ -815,7 +883,7 @@ ul.supp li {
 .footer {
      margin-top: 90px;
      padding-top: 90px;
-     background: #223781;
+     background: var(--primary-color);
      text-align: center;
 }
 
